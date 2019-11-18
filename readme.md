@@ -2,7 +2,9 @@
 
 ## 如何使用
 
-`npm run build`
+- `npm install`
+
+- `npm run build`
 
 
 ## 目录说明
