@@ -7,7 +7,7 @@
       <label>
           {{todo.content}}
       </label>
-      <button class="destroy" @click="deletTodo">X</button>
+      <button class="destroy" @click="deleteTodo">X</button>
   </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
     }
   },
   methods: {
-    deletTodo: function () {
+    deleteTodo: function () {
       this.$emit('deleteTodo', this.todo.id)
     }
   }

@@ -22,7 +22,7 @@
 - - `app.vue` 主页面
 - - `index.js` vue的入口文件，在weboack.config.base.js 的entry中有配置
 
-- - `practice` 练习的代码
+- `practice` 练习的代码
 
 - `.babelrc` jsx解析配置
 - `.editorconfig` EditorConfig配置，Editorconfig 是一套用于统一代码格式的解决方案，适用于多平台，多软件
