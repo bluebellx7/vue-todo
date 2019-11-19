@@ -10,15 +10,19 @@
 ## 目录说明
 
 - `build` 编译相关配置（webpack、vue相关配置）
+- - `template.thml` 默认挂载点
 - - `vue-loader.config.js` vue-loader的options配置
 - - `webpack.config.base.js` webpack基础配置，前后端通用
 - - `webpack.config.client.js` webpack客户端代码，对应的会增加server
+- - `webpack.config.practice.js` 练习的webpack配置
 - `client` 前端vue的代码
 - - `assets` 资源文件（images：图片文件，styles：样式文件）
 - - `layout` 共用组件
 - - `views` 页面组件
 - - `app.vue` 主页面
 - - `index.js` vue的入口文件，在weboack.config.base.js 的entry中有配置
+
+- - `practice` 练习的代码
 
 - `.babelrc` jsx解析配置
 - `.editorconfig` EditorConfig配置，Editorconfig 是一套用于统一代码格式的解决方案，适用于多平台，多软件

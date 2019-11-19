@@ -7,11 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:client": "cross-env NODE_ENV=production webpack  --mode=production --config build/webpack.config.client.js",
     "build": "npm run clean && npm run build:client",
-    "lint": "eslint --ext .js --ext .jsx --ext .vue client/ build/",
-    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/ build/",
+    "lint": "eslint --fix --ext .js --ext .jsx --ext .vue client/ build/ practice/",
+    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/ build/ practice/",
     "clean": "rimraf dist",
     "precommit": "npm run lint",
-    "dev": "cross-env NODE_ENV=devlopment webpack-dev-server  --mode=development --config build/webpack.config.client.js"
+    "dev": "cross-env NODE_ENV=devlopment webpack-dev-server  --mode=development --config build/webpack.config.client.js",
+    "practice": "cross-env NODE_ENV=devlopment webpack-dev-server  --mode=development --config build/webpack.config.practice.js"
   },
   "author": "",
   "license": "ISC",
