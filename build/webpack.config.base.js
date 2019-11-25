@@ -10,8 +10,9 @@ const config = {
   target: 'web',
   entry: path.join(__dirname, '../client/index.js'),
   output: {
-    path: path.join(__dirname, '../dist'),
-    filename: 'bundle.[hash:8].js'
+    path: path.join(__dirname, '../public'),
+    filename: 'bundle.[hash:8].js',
+    publicPath: '/public' // devServer的 historyApiFallback 中index对应
   },
   module: {
     rules: [

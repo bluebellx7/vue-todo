@@ -29,6 +29,27 @@ import Item from './item.vue'
 let id = 0
 
 export default {
+  props: ['id'], // 这个id可接收路由传递过来的id
+  metaInfo: {
+    title: 'The Todo App'
+  },
+  // beforeRouteEnter (to, from, next) {
+  //   window.console.log('页面级的 beforeRouteEnter')
+  //   next(vm => {
+  //     window.console.log('After enter vm.id is', vm.id)
+  //   })
+  // },
+  // beforeRouteUpdate (to, from, next) {
+  //   console.log('todo update enter------------>', this.id)
+  //   next()
+  // },
+  // beforeRouteLeave (to, from, next) {
+  //   console.log('todo leave enter')
+  //   const r = global.confirm('确认离开?')
+  //   if (r === true) {
+  //     next()
+  //   }
+  // },
   components: {
     Tabs, Item
   },

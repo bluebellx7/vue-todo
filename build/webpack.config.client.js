@@ -15,6 +15,18 @@ const devServer = {
   overlay: {
     errors: true
   },
+  // https://cloud.tencent.com/developer/section/1477376
+  // historyApiFallback: {
+  //   rewrites: [
+  //     { from: /^\/$/, to: '/views/landing.html' },
+  //     { from: /^\/subpage/, to: '/views/subpage.html' },
+  //     { from: /./, to: '/views/404.html' }
+  //   ]
+  // },
+  historyApiFallback: { // 用于如果找不到界面就返回默认首页
+    index: '/public/index.html'
+  },
+
   hot: true
   // open:true
 }
@@ -27,7 +39,9 @@ const defaultPulgins = [
     webpackName1: '"test DefinePlugin"'
   }),
   new VueLoaderPlugin(),
-  new HTMLWebpackPlugin()
+  new HTMLWebpackPlugin({
+    template: path.join(__dirname, 'template.html')
+  })
 ]
 
 let config
