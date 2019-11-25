@@ -58,7 +58,8 @@
     "precommit": "npm run lint"
   },
 "dependencies": {
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
