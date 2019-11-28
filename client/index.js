@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import Vuex from 'vuex'
 import App from './app.vue'
 
 import './assets/styles/global.styl'
@@ -9,10 +10,13 @@ import './assets/styles/global.styl'
 // import './assets/styles/test-stylus.styl'
 
 import createRouter from './config/router'
+import createSotre from './store/store'
 
 Vue.use(VueRouter)
+Vue.use(Vuex)
 
 const router = createRouter()
+const store = createSotre()
 
 router.beforeEach((to, from, next) => {
   window.console.log('全局路由钩子：beforeEach')
@@ -40,5 +44,6 @@ router.afterEach((to, from) => {
 
 new Vue({
   router,
+  store,
   render: (h) => h(App)
 }).$mount('#root')

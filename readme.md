@@ -59,7 +59,8 @@
   },
 "dependencies": {
     "vue": "^2.6.10",
-    "vue-router": "^3.1.3"
+    "vue-router": "^3.1.3",
+    "vuex": "^3.1.2"
   },
   "devDependencies": {
     "@babel/core": "^7.7.2",
@@ -71,6 +72,10 @@
     "babel-loader": "^8.0.6",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
+    // 引入该插件可以使用import()语法
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
+    // 引入该插件可以使用ES6、ES7、ES8语法，须在.babelrc中进行配置
+    "babel-preset-stage-1": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.2.0",

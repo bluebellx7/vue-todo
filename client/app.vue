@@ -5,20 +5,24 @@
 
     <!-- <router-link to="/app/123">app123</router-link>
     <router-link to="/app/456">app456</router-link>
-    <router-link to="/app">app</router-link>
-    <router-link to="/login">login</router-link> -->
+    <router-link to="/login">login</router-link>-->
+    <router-link to="/login">login</router-link>
+    <h1>{{ vuexStateCount }}</h1>
+    <h1>{{ fullName }}</h1>
     <router-link to="/route-test">/route-test</router-link>
 
     <Todo></Todo>
     <Footer></Footer>
     <transition name="fade" mode="out-in">
-     <router-view />
+      <router-view />
     </transition>
-
   </div>
 </template>
 
 <script>
+import {
+  mapMutations, mapGetters
+} from 'vuex'
 import Header from './layout/header.vue'
 import Todo from './views/todo/todo.vue'
 import Footer from './layout/footer.jsx'
@@ -34,16 +38,35 @@ export default {
       title: 'hello vue woool '
     }
   },
-  created () {
-    window.console.log('123')
-    // window.console.log(process.env.NODE_ENV)
-    // window.console.log(webpackName1)
+  mounted () {
+    let i = 1
+    setInterval(() => {
+      // this.$store.state.count++
+      this.updateCount({
+        num: i++,
+        num1: 2
+      })
+    }, 1000)
+  },
+  methods: {
+    ...mapMutations(['updateCount'])
+  },
+  computed: {
+    vuexStateCount () {
+      return this.$store.state.count
+    },
+    ...mapGetters(['fullName'])
+    // fullName () {
+    //   return this.$store.getters.fullName
+    // }
   }
 }
 </script>
 <style lang="stylus" scoped>
-a
-  color white
+a {
+  color: white;
+}
+
 #app {
   position: absolute;
   left: 0;
