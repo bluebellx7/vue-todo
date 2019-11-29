@@ -11,7 +11,7 @@ export default [
     // props: (route) => ({ id: route.query.b }),
 
     // 懒加载 https://blog.csdn.net/weixin_33768153/article/details/80454292
-    component: import('../views/todo/todo.vue'),
+    component: import('../views/todo/todo.vue').default,
     name: 'app',
     meta: {
       title: 'This is app',
@@ -24,7 +24,7 @@ export default [
   },
   {
     path: '/login',
-    component: import('../views/login/login.vue')
+    component: import('../views/login/login.vue').default
   },
   // 子路由测试
   {

@@ -105,7 +105,12 @@ if (isDev) {
     plugins: defaultPulgins.concat([
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoEmitOnErrorsPlugin()
-    ])
+    ]),
+    resolve: {
+      alias: {
+        vue: path.join(__dirname, '../node_modules/vue/dist/vue.esm.js')
+      }
+    }
   })
 } else {
   config = merge(baseConfig, {

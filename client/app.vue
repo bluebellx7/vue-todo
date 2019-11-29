@@ -1,27 +1,26 @@
 <template>
   <div id="app">
     <div id="cover"></div>
-    <Header :title="title"></Header>
-
-    <!-- <router-link to="/app/123">app123</router-link>
-    <router-link to="/app/456">app456</router-link>
-    <router-link to="/login">login</router-link>-->
     <router-link to="/login">login</router-link>
-    <h1>{{ vuexStateCount }}</h1>
-    <h1>{{ fullName }}</h1>
     <router-link to="/route-test">/route-test</router-link>
+    <h1>vuexStateCount:{{ vuexStateCount }}</h1>
+    <h1>fullName:{{ fullName }}</h1>
+    <h1>aText:{{ aText }}</h1>
+    <h1>bText:{{ bText }}</h1>
 
-    <Todo></Todo>
-    <Footer></Footer>
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
+
+    <Header :title="title"></Header>
+    <Todo></Todo>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import {
-  mapMutations, mapGetters
+  mapMutations, mapGetters, mapActions, mapState
 } from 'vuex'
 import Header from './layout/header.vue'
 import Todo from './views/todo/todo.vue'
@@ -39,23 +38,34 @@ export default {
     }
   },
   mounted () {
-    let i = 1
-    setInterval(() => {
-      // this.$store.state.count++
-      this.updateCount({
-        num: i++,
-        num1: 2
-      })
-    }, 1000)
+    // this.updateCountAsync({
+    //   num: 5,
+    //   time: 2000
+    // })
+    // let i = 1
+    // setInterval(() => {
+    //   // this.$store.state.count++
+    //   this.updateCount({
+    //     num: i++,
+    //     num1: 2
+    //   })
+    // }, 1000)
+    this['a/add']()
   },
   methods: {
+    ...mapActions(['updateCountAsync', 'a/add']),
     ...mapMutations(['updateCount'])
   },
   computed: {
+    ...mapState({
+      rootCount: (state) => state.count,
+      aText: (state) => state.a.text,
+      bText: (state) => state.b.text
+    }),
+    ...mapGetters(['fullName']),
     vuexStateCount () {
       return this.$store.state.count
-    },
-    ...mapGetters(['fullName'])
+    }
     // fullName () {
     //   return this.$store.getters.fullName
     // }
@@ -73,6 +83,7 @@ a {
   right: 0;
   top: 0;
   bottom: 0;
+  color: white;
 }
 
 #cover {
